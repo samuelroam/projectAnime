@@ -10,7 +10,8 @@
     <script>
         //con JQuery
     $(document).ready(function() {
-           let enlaceDePeticion = 'https://animeflv.chrismichael.now.sh/api/v1/'
+           let enlaceDePeticion = 'https://animeflv.chrismichael.now.sh/api/v1'
+           let SubEntradas
 
 //cuando se pulsa el botón
                 //recoge valores de los input
@@ -23,15 +24,16 @@
                     document.getElementById('print').innerHTML+=(data)
                     document.getElementById('print').innerHTML+="Autor: "+data.author+"<br>";
                     entradas=data.entries
-                    for(let i=0;i<=entradas.length;i++){
-                        console.log(entradas[i])
-                        let SubEntradas=entradas[i]
-                       // document.getElementById('print').innerHTML+=SubEntradas.Ova
-                        console.log(SubEntradas.Ova)
+                    document.getElementById('print').innerHTML+=entradas[0].Ova+'<br>'
+                    console.log(entradas[0].Ova)
+                    
+                    /*for(let i=0;i<=entradas.length;i++){
+                    //    SubEntradas=entradas[i]
+                        document.getElementById('print').innerHTML+='<a href='+enlaceDePeticion+entradas[i].Ova+'>OVA</a>'
+                        console.log(entradas[i].Ova)
                         
-                    }
-                    document.getElementById('print').innerHTML+=2
-                    document.getElementById('print').innerHTML+="Entradas: "+data.entries[0]+"<br>";
+                    }*/
+                    //document.getElementById('print').innerHTML+="Entradas: "+data.entries[0]+"<br>";
 
                    
                     document.getElementById('print').innerHTML+="Mensaje: "+data.message+"<br>";
